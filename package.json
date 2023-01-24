@@ -1,0 +1,31 @@
+{
+  "name": "seeit",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Tiny gallery maker.",
+  "main": "index.js",
+  "bin": {
+    "seeit": "index.js"
+  },
+  "scripts": {
+    "save": "git add .; git commit -m 'New Release'; git push; npm version patch; npm publish; git push;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catpea/seeit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catpea/seeit/issues"
+  },
+  "homepage": "https://github.com/catpea/seeit#readme",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "ejs": "^3.1.8",
+    "execa": "^6.1.0",
+    "fs-extra": "^11.1.0",
+    "lodash": "^4.17.21"
+  }
+}
