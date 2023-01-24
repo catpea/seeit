@@ -21,13 +21,13 @@ let sets = (await fs.readdir('docs', {withFileTypes:true})).filter(dirent => dir
   preview:path.join('docs', 'preview', o.replace(/\.[a-z0-9]{3,4}$/,'.jpg'))
  }))}))
 
-// // resize files
-// for (const set of sets) {
-//   for (const file of set.files) {
-//     await fs.ensureDir(path.dirname(file.preview));
-//     await execa('convert', [file.image, '-scale','25%', file.preview]);
-//   }
-// }
+// resize files
+for (const set of sets) {
+  for (const file of set.files) {
+    await fs.ensureDir(path.dirname(file.preview));
+    await execa('convert', [file.image, '-scale','25%', file.preview]);
+  }
+}
 
 // create index file
 const indexEjs = await fs.readFile(path.join(dirname, 'templates', 'index.ejs'), 'utf8'); // read text
